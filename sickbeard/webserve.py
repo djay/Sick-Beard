@@ -1141,10 +1141,11 @@ class ConfigProviders:
     @cherrypy.expose
     def saveProviders(self, nzbmatrix_username=None, nzbmatrix_apikey=None,
                       nzbs_r_us_uid=None, nzbs_r_us_hash=None, newznab_string=None,
-                      tvtorrents_digest=None, tvtorrents_hash=None, 
+                      tvtorrents_digest=None, tvtorrents_hash=None,
                       thepiratebay_trusted=None, thepiratebay_proxy=None, thepiratebay_proxy_url=None,
                       btn_api_key=None,
                       dtt_norar = None, dtt_single = None,newzbin_username=None, newzbin_password=None,
+                      twittertorrents_id=None,
                       provider_order=None):
 
         results = []
@@ -1209,6 +1210,8 @@ class ConfigProviders:
                 sickbeard.TVTORRENTS = curEnabled
             elif curProvider == 'thepiratebay':
                 sickbeard.THEPIRATEBAY = curEnabled                    
+            elif curProvider == 'twittertorrents':
+                sickbeard.TWITTERTORRENTS = curEnabled
             elif curProvider == 'btn':
                 sickbeard.BTN = curEnabled
             elif curProvider == 'dailytvtorrents':
@@ -1250,6 +1253,8 @@ class ConfigProviders:
             dtt_single = 0
 
         sickbeard.DTT_SINGLE = dtt_single    
+
+        sickbeard.TWITTERTORRENTS_ID = twittertorrents_id.strip()
 
         sickbeard.BTN_API_KEY = btn_api_key.strip()
 
