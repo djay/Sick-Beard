@@ -8,8 +8,8 @@
 #import os.path
 #include $os.path.join($sickbeard.PROG_DIR, "gui/slick/interfaces/default/inc_top.tmpl")
 
-<script type="text/javascript" src="$sbRoot/js/configSearch.js"></script>
-<script type="text/javascript" src="$sbRoot/js/config.js"></script>
+<script type="text/javascript" src="$sbRoot/js/configSearch.js?$sbPID"></script>
+<script type="text/javascript" src="$sbRoot/js/config.js?$sbPID"></script>
 #if $varExists('header') 
 	<h1 class="header">$header</h1>
 #else 
@@ -67,7 +67,7 @@
                         </div>
 
                         <div class="clearfix"></div>
-                        <input type="submit" class="config_submitter" value="Save Changes" /><br/>
+                        <input type="submit" class="btn config_submitter" value="Save Changes" /><br/>
                         
                     </fieldset>
                 </div><!-- /component-group1 //-->
@@ -225,8 +225,8 @@
                         <div class="clearfix"></div>
                         
                         <div class="testNotification" id="testSABnzbd-result">Click below to test.</div>
-                        <input type="button" value="Test SABnzbd" id="testSABnzbd" class="test-button"/>
-                        <input type="submit" class="config_submitter" value="Save Changes" /><br/>
+                        <input class="btn" type="button" value="Test SABnzbd" id="testSABnzbd" class="btn test-button"/>
+                        <input type="submit" class="btn config_submitter" value="Save Changes" /><br/>
                         
                         </div><!-- /content_use_nzbs //-->
                         
@@ -285,7 +285,7 @@
                         	</div>
 
 	                        <div class="clearfix"></div>
-	                        <input type="submit" class="config_submitter" value="Save Changes" /><br/>
+	                        <input type="submit" class="btn config_submitter" value="Save Changes" /><br/>
 	                        </div><!-- /content_use_torrents //-->                        	
                         </div>
                         
@@ -361,8 +361,8 @@
                             </div>
 
                         	<div class="testNotification" id="testTorrent-result">Click below to test.</div>
-                        	<input type="button" value="Test Connection" id="testTorrent" class="test-button"/>
-                        	<input type="submit" class="config_submitter" value="Save Changes" /><br/>
+                        	<input class="btn" type="button" value="Test Connection" id="testTorrent" class="btn test-button"/>
+                        	<input type="submit" class="btn config_submitter" value="Save Changes" /><br/>
                             </div>
                     </div>                       
                     </fieldset>
@@ -373,8 +373,9 @@
                 </div> //-->
                 
 		<br/>
-            <small class="float-right">All non-absolute folder locations are relative to " <span class="path">$sickbeard.DATA_DIR</span> "</small>
-            <input type="submit" class="config_submitter button" value="Save Changes" /><br/>
+		<small class="float-right"><b>All non-absolute folder locations are relative to <span class="path">$sickbeard.DATA_DIR</span></b> </small>
+		<input type="submit" class="btn config_submitter button" value="Save Changes" /><br/>
+		
 
             </div><!-- /config-components //-->
 
